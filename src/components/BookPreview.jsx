@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 export default function BookPreview({ book }) {
-  const { author, coverimage, title } = book;
+  const { author, coverimage, title, id } = book;
   return (
     <li>
-      <Link>
+      <Link to={{ pathname: `/books/${id}` }} state={{ book }}>
         <h2>{title}</h2>
         <p>By {author}</p>
-        <img src={coverimage} alt={`Cover of ${title}`}></img>
+        <img src={coverimage} alt={`Cover of ${title}`} />
       </Link>
     </li>
   );

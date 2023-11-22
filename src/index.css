@@ -35,4 +35,25 @@ body {
   width: 250px;
 }
 
+/* SINGLE BOOK */
+
+.single-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.info {
+  width: 35%;
+}
+.book-cover {
+  width: 55%;
+}
+
+.book-cover img {
+  height: 600px;
+}
+
 /* Add your own custom styles here */
