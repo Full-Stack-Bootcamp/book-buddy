@@ -10,8 +10,6 @@ export default function Books() {
       try {
         const newBooks = await getAllBooks();
         setBookList(newBooks);
-        console.log("bookList");
-        console.log(bookList);
       } catch (error) {
         console.log(error);
       }

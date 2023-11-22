@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const user = {
     email: userEmail,
@@ -13,14 +14,20 @@ export default function Login() {
   };
 
   async function handleSubmit(e) {
-    console.log(user);
     e.preventDefault();
     const response = await apiLogIn(user);
-    console.log(response);
+    if (response.message === "Login successful!") {
+      const token = response?.token;
+      localStorage.setItem("current-user-key", token);
+      location.reload();
+    } else {
+      setErrorMessage(response?.message);
+    }
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Log In</h3>
       <label>
         Email:
         <input
@@ -40,6 +47,7 @@ export default function Login() {
         />
       </label>
       <button>Log In</button>
+      <p>{errorMessage}</p>
     </form>
   );
 }
