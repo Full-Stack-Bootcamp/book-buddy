@@ -58,3 +58,21 @@ export async function getUserInfo(token) {
     console.log(error);
   }
 }
+
+export async function rentBookApi(userKey, bookId) {
+  try {
+    const response = await fetch(`${baseUrl}/books/${bookId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userKey}`,
+      },
+      body: JSON.stringify({ available: false }),
+    });
+    const json = await response.json();
+    console.log(json);
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}

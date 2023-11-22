@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function BookPreview({ book }) {
+  console.log(book);
   const { author, coverimage, title, id } = book;
   return (
     <li>
