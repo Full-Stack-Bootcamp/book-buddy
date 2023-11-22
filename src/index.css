@@ -10,4 +10,29 @@ body {
   margin-right: 10px;
 }
 
+#book-preview {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#book-preview li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+}
+
+#book-preview p {
+  margin-top: 0;
+}
+
+#book-preview img {
+  width: 250px;
+}
+
 /* Add your own custom styles here */
