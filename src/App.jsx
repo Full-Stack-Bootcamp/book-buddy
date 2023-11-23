@@ -1,20 +1,16 @@
-import bookLogo from "./assets/books.png";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigations";
 import SingleBook from "./components/SingleBook";
 import Homepage from "./Pages/Homepage";
 import AccountPage from "./Pages/AccountPage";
 import BooksPage from "./Pages/BooksPage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1>
-        <img id="logo-image" src={bookLogo} />
-        Library App
-      </h1>
-
       <BrowserRouter>
+        <Header />
         <Navigation />
         <Routes>
           <Route path="/" element={<Homepage />} />

@@ -67,7 +67,9 @@ export default function Register() {
             value={userPassword}
           />
         </label>
-        <button>Register</button>
+        <button>
+          <span class="material-symbols-outlined">how_to_reg</span>
+        </button>
       </form>
       {response && <h4>{response.message}</h4>}
     </>

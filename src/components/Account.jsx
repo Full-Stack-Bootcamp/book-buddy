@@ -22,11 +22,6 @@ export default function Account() {
     retrieveUserInfo();
   }, []);
 
-  function logOut() {
-    localStorage.setItem("current-user-key", "");
-    location.reload();
-  }
-
   function accountBookPreview(bookInfo, indexInfo) {
     const { id } = bookInfo;
     const userKey = localStorage.getItem("current-user-key");
@@ -44,16 +39,14 @@ export default function Account() {
 
   return (
     <div className="account-info">
+      <h1>Account Info</h1>
       <p>First Name: {userInfoArray.firstname}</p>
       <p>Last Name: {userInfoArray.lastname}</p>
       <p>Email: {userInfoArray.email}</p>
-      <br />
       <h2>Checked Out Books: </h2>
       <ul className="book-preview">
         {bookList.map((book, key) => accountBookPreview(book, key))}
       </ul>
-      <br />
-      <button onClick={logOut}>logout</button>
     </div>
   );
 }
