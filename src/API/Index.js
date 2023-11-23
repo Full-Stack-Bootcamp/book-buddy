@@ -6,7 +6,7 @@ export async function getAllBooks() {
       headers: { "Content-Type": "application/json" },
     });
     const booksArray = await response.json();
-    console.log(booksArray);
+    // console.log(booksArray);
     return booksArray.books;
   } catch (error) {
     console.log(error);

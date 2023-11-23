@@ -14,7 +14,6 @@ export default function SingleBook() {
 
   async function rentBook() {
     const response = await rentBookApi(userKey, id);
-    console.log(response);
     setAvailable(false);
   }
 

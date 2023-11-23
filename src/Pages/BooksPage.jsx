@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAllBooks } from "../API/Index";
 import Search from "../components/Search";
 
-export default function Homepage() {
+export default function BooksPage() {
   const [bookList, setBookList] = useState([]);
   useEffect(() => {
     async function retrieveBookList() {
@@ -18,8 +18,7 @@ export default function Homepage() {
   }, []);
   return (
     <>
-      <h2>Welcome to the Library App!</h2>
-      <Search bookList={bookList} />
+      <Books books={bookList} />
     </>
   );
 }
