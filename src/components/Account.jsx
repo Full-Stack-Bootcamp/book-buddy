@@ -35,6 +35,7 @@ export default function Account() {
     const userKey = localStorage.getItem("current-user-key");
     async function returnBook() {
       const results = await returnBookApi(userKey, id);
+      location.reload();
     }
     return (
       <li>

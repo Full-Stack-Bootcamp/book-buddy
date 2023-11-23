@@ -7,7 +7,7 @@ export default function SingleBook() {
   const locationInfo = useLocation();
   const book = locationInfo.state.book;
   const { title, author, description, coverimage, id } = book;
-  let { available } = book;
+  const [available, setAvailable] = useState(book.available);
   const [userKey, setUserKey] = useState(() =>
     localStorage.getItem("current-user-key")
   );
@@ -15,6 +15,7 @@ export default function SingleBook() {
   async function rentBook() {
     const response = await rentBookApi(userKey, id);
     console.log(response);
+    setAvailable(false);
   }
 
   return (
@@ -26,13 +27,12 @@ export default function SingleBook() {
         <h4>
           {available && userKey ? (
             <button onClick={rentBook}>Rent Book</button>
-          ) : (
+          ) : !available && userKey ? (
             "Currently Checked Out"
+          ) : (
+            "Log In or Register to rent this book!"
           )}
         </h4>
-        <Link to="/books">
-          <button>All Books</button>
-        </Link>
       </div>
       <div className="book-cover">
         <img src={coverimage} alt={`Cover of ${title}`} />
