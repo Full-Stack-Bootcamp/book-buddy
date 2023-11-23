@@ -9,6 +9,7 @@ export default function Books() {
     async function retrieveBookList() {
       try {
         const newBooks = await getAllBooks();
+        console.log(newBooks);
         setBookList(newBooks);
       } catch (error) {
         console.log(error);
