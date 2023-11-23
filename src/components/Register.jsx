@@ -19,8 +19,12 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await register(user);
-    setResponse(response);
+    if (userEmail === "" || userPassword === "") {
+      setResponse({ message: "Please supply both an Email and Password" });
+    } else {
+      const response = await register(user);
+      setResponse(response);
+    }
   }
 
   return (
@@ -65,7 +69,7 @@ export default function Register() {
         </label>
         <button>Register</button>
       </form>
-      {response && <h1>{response.message}</h1>}
+      {response && <h4>{response.message}</h4>}
     </>
   );
 }

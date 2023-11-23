@@ -23,15 +23,16 @@ export default function SingleBook() {
         <h2>{title}</h2>
         <h4>By {author}</h4>
         <p>{description}</p>
-        <h4>
-          {available && userKey ? (
-            <button onClick={rentBook}>Rent Book</button>
-          ) : !available && userKey ? (
-            "Currently Checked Out"
-          ) : (
-            "Log In or Register to rent this book!"
-          )}
-        </h4>
+
+        {available && userKey ? (
+          <button onClick={rentBook}>Rent Book</button>
+        ) : !available && userKey ? (
+          <h4>Currently Checked Out</h4>
+        ) : (
+          <h4>
+            <Link to="/account">Log In or Register</Link> to rent this book!
+          </h4>
+        )}
       </div>
       <div className="book-cover">
         <img src={coverimage} alt={`Cover of ${title}`} />
