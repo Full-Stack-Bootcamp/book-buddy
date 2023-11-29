@@ -11,23 +11,22 @@ export default function Register() {
   const [response, setResponse] = useState("");
 
   const user = {
-    firstName: userFirstName,
-    lastName: userLastName,
+    firstname: userFirstName,
+    lastname: userLastName,
     email: userEmail,
     password: userPassword,
   };
 
   async function handleSubmit(e) {
-    console.log(user);
     e.preventDefault();
     const response = await register(user);
-    console.log(response);
     setResponse(response);
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <h3>Register</h3>
         <label>
           First Name:
           <input

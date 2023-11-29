@@ -56,4 +56,11 @@ body {
   height: 600px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.account-section {
+}
 /* Add your own custom styles here */
