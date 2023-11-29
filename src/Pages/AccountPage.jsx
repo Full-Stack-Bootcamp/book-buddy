@@ -8,10 +8,6 @@ export default function AccountPage() {
     localStorage.getItem("current-user-key")
   );
 
-  useEffect(() => {
-    setUserKey(localStorage.getItem("current-user-key"));
-  }, []);
-
   return (
     <div className="account-section">
       {userKey ? (
