@@ -6,6 +6,7 @@ export async function getAllBooks() {
       headers: { "Content-Type": "application/json" },
     });
     const booksArray = await response.json();
+    console.log(booksArray);
     return booksArray.books;
   } catch (error) {
     console.log(error);
@@ -68,6 +69,39 @@ export async function rentBookApi(userKey, bookId) {
         Authorization: `Bearer ${userKey}`,
       },
       body: JSON.stringify({ available: false }),
+    });
+    const json = await response.json();
+    console.log(json);
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function reservationListApi(userId) {
+  try {
+    const response = await fetch(`${baseUrl}/reservations`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userId}`,
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function returnBookApi(userId, resId) {
+  try {
+    const response = await fetch(`${baseUrl}/reservations/${resId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userId}`,
+      },
     });
     const json = await response.json();
     console.log(json);
