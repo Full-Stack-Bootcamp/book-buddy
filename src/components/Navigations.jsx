@@ -11,7 +11,7 @@ export default function Navigation() {
       {userKey ? (
         <Link to="/account">Account</Link>
       ) : (
-        <Link to="/account">Log In/Register Test</Link>
+        <Link to="/account">Log In/Register</Link>
       )}
     </nav>
   );
