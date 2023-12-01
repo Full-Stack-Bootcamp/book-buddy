@@ -27,14 +27,11 @@ export default function Account() {
     location.reload();
   }
 
-  // const result = await returnBookApi(userId, bookId);
-  // console.log(result);
-
   function accountBookPreview(bookInfo, indexInfo) {
     const { id } = bookInfo;
     const userKey = localStorage.getItem("current-user-key");
     async function returnBook() {
-      const results = await returnBookApi(userKey, id);
+      await returnBookApi(userKey, id);
       location.reload();
     }
     return (

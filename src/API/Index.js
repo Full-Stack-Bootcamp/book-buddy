@@ -6,7 +6,6 @@ export async function getAllBooks() {
       headers: { "Content-Type": "application/json" },
     });
     const booksArray = await response.json();
-    // console.log(booksArray);
     return booksArray.books;
   } catch (error) {
     console.log(error);
@@ -71,7 +70,6 @@ export async function rentBookApi(userKey, bookId) {
       body: JSON.stringify({ available: false }),
     });
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.log(error);
@@ -87,7 +85,6 @@ export async function reservationListApi(userId) {
       },
     });
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.log(error);
@@ -104,7 +101,6 @@ export async function returnBookApi(userId, resId) {
       },
     });
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.log(error);
