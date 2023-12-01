@@ -35,25 +35,28 @@ export default function Account() {
     const userKey = localStorage.getItem("current-user-key");
     async function returnBook() {
       const results = await returnBookApi(userKey, id);
+      location.reload();
     }
     return (
       <li>
         <BookPreview book={bookInfo} key={indexInfo} />
-        <button onClick={returnBook}>Return</button>
+        <button onClick={returnBook}>Return {bookInfo.title}</button>
       </li>
     );
   }
 
   return (
-    <>
-      <p>{userInfoArray.firstname}</p>
-      <p>{userInfoArray.lastname}</p>
-      <p>{userInfoArray.email}</p>
-      <ul id="book-preview">
-        {bookList.map((book, index) => accountBookPreview(book, index))}
+    <div className="account-info">
+      <p>First Name: {userInfoArray.firstname}</p>
+      <p>Last Name: {userInfoArray.lastname}</p>
+      <p>Email: {userInfoArray.email}</p>
+      <br />
+      <h2>Checked Out Books: </h2>
+      <ul className="book-preview">
+        {bookList.map((book, key) => accountBookPreview(book, key))}
       </ul>
-
+      <br />
       <button onClick={logOut}>logout</button>
-    </>
+    </div>
   );
 }

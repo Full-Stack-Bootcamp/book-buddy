@@ -1,8 +1,23 @@
 body {
-  font-family: Georgia, serif;
+  font-family: "Goudy Bookletter 1911", serif;
+  /* font-family: "Libre Franklin", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
   background-color: #f8f8f8;
   margin: 0;
   padding: 0;
+}
+
+input {
+  margin-left: 5px;
+}
+
+h2 {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 5px;
 }
 
 #logo-image {
@@ -10,15 +25,16 @@ body {
   margin-right: 10px;
 }
 
-#book-preview {
+.book-preview {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 0;
 }
 
-#book-preview li {
+.book-preview li {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,11 +43,11 @@ body {
   text-align: center;
 }
 
-#book-preview p {
+.book-preview p {
   margin-top: 0;
 }
 
-#book-preview img {
+.book-preview img {
   width: 250px;
 }
 
@@ -43,6 +59,7 @@ body {
   align-items: center;
 
   text-align: center;
+  margin-top: 25px;
 }
 
 .info {
@@ -61,6 +78,49 @@ nav {
   justify-content: space-evenly;
 }
 
-.account-section {
+.account-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 }
+
+.account-info ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#search-results,
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#search-results li,
+#search-results div,
+#search-results div ul,
+.book-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+#search-results li {
+  width: 200px;
+}
+
+/* #search-results li a {
+  width: 200px;
+} */
+
+#search-results li a img {
+  width: 80%;
+}
+
 /* Add your own custom styles here */
