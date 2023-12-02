@@ -13,7 +13,7 @@ export default function Navigation() {
       <Link to="/books">See All Books</Link>
       {userKey ? (
         <>
-          <Link to="/availablebooks">AvailableBooks</Link>
+          <Link to="/availablebooks">Available Books</Link>
           <Link to="/account">Account</Link>
         </>
       ) : (
