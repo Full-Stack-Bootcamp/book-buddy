@@ -46,7 +46,9 @@ export default function Login() {
           value={userPassword}
         />
       </label>
-      <button>Log In</button>
+      <button>
+        <span class="material-symbols-outlined">login</span>
+      </button>
       <h4>{errorMessage}</h4>
     </form>
   );

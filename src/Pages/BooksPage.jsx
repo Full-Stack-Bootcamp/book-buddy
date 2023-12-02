@@ -1,7 +1,6 @@
 import Books from "../components/Books";
 import { useState, useEffect } from "react";
 import { getAllBooks } from "../API/Index";
-import Search from "../components/Search";
 
 export default function BooksPage() {
   const [bookList, setBookList] = useState([]);
