@@ -43,7 +43,7 @@ export default function Account() {
       <p>First Name: {userInfoArray.firstname}</p>
       <p>Last Name: {userInfoArray.lastname}</p>
       <p>Email: {userInfoArray.email}</p>
-      <h2>Checked Out Books: </h2>
+      <h2>Currently Checked Out Books: </h2>
       <ul className="book-preview">
         {bookList.map((book, key) => accountBookPreview(book, key))}
       </ul>

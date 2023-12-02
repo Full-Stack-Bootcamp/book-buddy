@@ -8,11 +8,14 @@ export default function Navigation() {
   return (
     <nav>
       <Link to="/">
-        <span class="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined">search</span>
       </Link>
       <Link to="/books">See All Books</Link>
       {userKey ? (
-        <Link to="/account">Account</Link>
+        <>
+          <Link to="/availablebooks">AvailableBooks</Link>
+          <Link to="/account">Account</Link>
+        </>
       ) : (
         <Link to="/account">Log In/Register</Link>
       )}
