@@ -47,7 +47,7 @@ export default function Login() {
         />
       </label>
       <button>
-        <span class="material-symbols-outlined">login</span>
+        <span className="material-symbols-outlined">login</span>
       </button>
       <h4>{errorMessage}</h4>
     </form>
